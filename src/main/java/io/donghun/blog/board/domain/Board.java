@@ -1,5 +1,6 @@
 package io.donghun.blog.board.domain;
 
+import io.donghun.blog.common.constants.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ public class Board {
     @Column(nullable = false, length = 50, unique = true)
     private String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private String role;
+    private Role role;
 }
