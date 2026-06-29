@@ -51,7 +51,7 @@ public class SecurityConfig {
 
     public static class EndPoints {
         public static final String[] GET_PUBLIC = {
-                "/", "/login", "/signup", "/posts/**", "/css/**", "/js/**", "/images/**", "/h2-console/**"
+                "/", "/login", "/signup","/posts", "/posts/*", "/css/**", "/js/**", "/images/**", "/h2-console/**"
         };
 
         public static final String[] POST_PUBLIC = {

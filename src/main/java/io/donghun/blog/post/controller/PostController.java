@@ -25,6 +25,7 @@ public class PostController {
 
     @GetMapping("/write")
     public String writeForm(@RequestParam("boardId") Long boardId, Model model) {
+        model.addAttribute("board", postService.findBoard(boardId));
         model.addAttribute("postRequest", new PostCreateRequest(boardId, "", ""));
         return "post-write";
     }
@@ -38,8 +39,10 @@ public class PostController {
             Model model
     ) {
         if (bindingResult.hasErrors()) {
-            model.addAttribute("board", postService.findBoard(request.boardId()));
 
+            if (request.boardId() != null) {
+                model.addAttribute("board", postService.findBoard(request.boardId()));
+            }
             return "post-write";
         }
 

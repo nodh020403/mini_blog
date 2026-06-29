@@ -5,6 +5,9 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### 환경파일 ###
+.env.development
+
 ### STS ###
 .apt_generated
 .classpath
